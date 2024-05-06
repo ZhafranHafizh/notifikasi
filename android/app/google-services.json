@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "62727313",
+    "project_id": "tpmod11-1302210036",
+    "storage_bucket": "tpmod11-1302210036.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:62727313:android:ec945645c08e6b510ccb30",
+        "android_client_info": {
+          "package_name": "com.example.tp_mod11"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVpJVILdhA-9GEXxYiUYzQF1bIYGsFP0g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
