@@ -4,8 +4,8 @@ import 'package:tp_mod11/app.dart';
 import 'package:tp_mod11/firebase_handler.dart'; // Import FirebaseHandler
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized(); // Pastikan inisialisasi Flutter sudah selesai
-  await Firebase.initializeApp(); // Inisialisasi Firebase
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp(navigatorKey));
   WidgetsBinding.instance!.addPostFrameCallback((_) {
     initializeFirebaseHandler();

@@ -11,14 +11,30 @@ class FirebaseHandler {
     });
 
     FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
-      print("onMessageOpenedApp: $message");
-      Navigator.pushNamed(
-          context, '/notification'); // Menavigasi ke halaman notifikasi
-    });
+      RemoteNotification? notification = message.notification;
+      AndroidNotification? android = message.notification?.android;
+      if (notification != null && android != null) {
+        showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: Text(notification.title ?? ""),
+              content: Text(notification.body ?? ""),
+              actions: <Widget>[
+                TextButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/');
+                  },
+                  child: Text('Close'),
+                ),
+              ],
+            );
+          },
+        );
+      }
 
-    FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
-      print("onMessageOpenedApp: $message");
-      Navigator.pushNamed(context, '/notification');
+      // print("onMessageOpenedApp: $message");
+      // Navigator.pushNamed(context, '/notification');
     });
 
     FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
